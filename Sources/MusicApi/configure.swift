@@ -10,10 +10,10 @@ public func configure(_ app: Application) async throws {
 
     app.databases.use(DatabaseConfigurationFactory.mysql(
         hostname: Environment.get("DATABASE_HOST") ?? "localhost",
-        port: Environment.get("DATABASE_PORT").flatMap(Int.init(_:)) ?? 3311,
-        username: Environment.get("DATABASE_USERNAME") ?? "vapor_username",
-        password: Environment.get("DATABASE_PASSWORD") ?? "1234567",
-        database: Environment.get("DATABASE_NAME") ?? "vapor_database",
+        port: Environment.get("DATABASE_PORT").flatMap(Int.init(_:)) ?? 3306,
+        username: Environment.get("DATABASE_USERNAME") ?? "doadmin",
+        password: Environment.get("DATABASE_PASSWORD") ?? "contraseña",
+        database: Environment.get("DATABASE_NAME") ?? "defaultdb",
         tlsConfiguration: TLSConfiguration.forClient(certificateVerification: .none)
     ), as: .mysql)
 
